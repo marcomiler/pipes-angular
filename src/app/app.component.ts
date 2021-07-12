@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {PrimeNGConfig} from 'primeng/api';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  nombre: string = 'Marco';
+export class AppComponent implements OnInit{
+  constructor(private primeNGConfig: PrimeNGConfig){}
 
-  mostrarNombre(){
-    return this.nombre;
+  ngOnInit() {
+    this.primeNGConfig.ripple = true;//guiandonos de la doc de PrimeNG configuramos las animaciones
   }
+  
 }

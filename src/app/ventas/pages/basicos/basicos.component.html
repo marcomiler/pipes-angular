@@ -7,12 +7,69 @@
 
 <div class="p-grid">
     <div class="p-col-4">
-        <p-card header="uppercase"></p-card>
+        <p-card header="uppercase"
+            [subheader]="nombreUpper | uppercase">
+        {{nombreUpper | uppercase}}
+        </p-card>
     </div>
     <div class="p-col-4">
+        <p-card header="lowercase"
+            [subheader]="nombreLower | lowercase">
+        {{nombreLower | lowercase}}
         
+        </p-card>
     </div>
     <div class="p-col-4">
+        <p-card header="titlecase"
+             [subheader]="nombreTitle | titlecase">
+             {{nombreTitle | titlecase}}
+    </p-card>
+    </div>
+</div>
+
+<div class="text-layout">
+    <h1>Date | Fecha | Pipe</h1>
+    <p>
+        Pipe para mostrar las fechas
+    </p>
+</div>
+
+<div class="p-grid">
+    <div class="p-col-6">
+        <p-card>
+            <ul>
+                <li>fecha</li>
+                <li>fecha | date</li>
+                <li>fecha | date:'short'</li>
+                <li>fecha | date:'long'</li>
+                <li>fecha | date:'custom'</li>
+            </ul>
+            <hr>
+            <ul>
+                <li>fecha | date:'long':'GMT-6'</li>
+                <li>fecha | date:'long':'GMT-4'</li>
+                <li>fecha | date:'long':'GMT-5':'en'</li>
+            </ul>
+        </p-card>
+    </div>
+    <div class="p-col-6">
+        <p-card>
+            <ul>
+                <li>{{fecha}}</li>
+                <li>{{fecha | date}}</li>
+                <li>{{fecha | date:'short'}}</li>
+                <li>{{fecha | date:'long'}}</li>
+                <li>{{fecha | date:'dd LLLL yyyy'}}</li>
+            </ul>
+            <hr>
+            <ul>
+                <li>{{fecha | date:'long':'GMT-6':'en'}}</li>
+                <li>{{fecha | date:'long':'GMT-4'}}</li>
+                <li>{{fecha | date:'long':'GMT-5':'fr'}}</li>
+                <!-- si queremos usar otros idiomas debemos importar en locales de manera global -->
+            </ul>
+        </p-card>
         
     </div>
+    
 </div>
